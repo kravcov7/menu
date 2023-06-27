@@ -3,9 +3,9 @@ import styles from "../styles/user.module.scss";
 import MainContainer from "../components/MainContainer";
 
 const Tasks = ({ todos }) => {
-    console.log(todos)
+  console.log(todos);
   return (
-    <MainContainer keywords='Задачи'>
+    <MainContainer keywords="Задачи">
       <div className={styles.userd}>
         <h1 className={styles.userdf}>Задачи</h1>
         <ul>

@@ -1,9 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
-import styles from "../styles/CheckBox.module.scss";
+import styles from "../styles/Checkbox.module.scss";
 
-/**
- * Базовый компонент "Чек-бокс".
- */
 export function CheckBox({
   isChecked = false,
   text = "",

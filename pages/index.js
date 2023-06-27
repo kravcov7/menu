@@ -9,7 +9,7 @@ const index = ({ posts, users }) => {
   console.log(users[0]);
   return (
     <div>
-      <MainContainer keywords='Посты'>
+      <MainContainer keywords="Посты">
         <h1>Посты</h1>
         <ul>
           {posts.map((post) => (
