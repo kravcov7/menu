@@ -5,21 +5,15 @@ import Card from "../components/Card";
 import MainContainer from "../components/MainContainer";
 
 const Photos = ({ albums, users }) => {
-  const [perPage, setPerPage] = useState(10)
-  console.log(albums)
+  const [perPage, setPerPage] = useState(10);
 
-    const handlePerPageChange = event => {
-		setPerPage(parseInt(event.target.value))
-	}
-
-    const selectedCountAlbums = albums.slice(0, perPage)
-
+  const selectedCountAlbums = albums.slice(0, perPage);
 
   return (
     <MainContainer keywords="Фото">
       <div className={styles.userd}>
         <h1 className={styles.userdf}>Фото</h1>
-        <ul  className={styles.container}>
+        <ul className={styles.container}>
           {selectedCountAlbums.map((album) => (
             <Card key={album.id} user={users[0].username} title={album.title} />
           ))}

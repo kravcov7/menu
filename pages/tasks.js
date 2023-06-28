@@ -3,7 +3,6 @@ import styles from "../styles/user.module.scss";
 import MainContainer from "../components/MainContainer";
 
 const Tasks = ({ todos }) => {
-  console.log(todos);
   return (
     <MainContainer keywords="Задачи">
       <div className={styles.userd}>
