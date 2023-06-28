@@ -1,4 +1,13 @@
 .navbar {
-  background: orange;
+  background: #1c1c21;
   padding: 15px;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: min-content;
+
+  @media (min-width: 768px) {
+
+  }
 }

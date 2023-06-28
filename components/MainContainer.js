@@ -14,7 +14,7 @@ const MainContainer = ({ keywords, children }) => {
         <A className={styles.link} href={"/photos"} text="Фото" />
         <A className={styles.link} href={"/tasks"} text="Задачи" />
       </div>
-      <div>{children}</div>
+      <div className={styles.main}>{children}</div>
     </>
   );
 };

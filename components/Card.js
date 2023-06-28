@@ -6,13 +6,19 @@ const Card = ({ title, text, user }) => {
   return (
     <>
       <li className={styles.card}>
-        {user && <h2 className={styles.title}>{user}</h2>}
-        {title && <h2 className={styles.title}>{title}</h2>}
-        {text && <h2 className={styles.text}>{text}</h2>}
+        <div className={styles.box}>
+
+        {user && <h2 className={styles.title}>Author: {user}</h2>}
+        {title && <h4 className={styles.title}>{title}</h4>}
+        {text && <h4 className={styles.text}>{text}</h4>}
+        </div>
 
         <footer className={styles.footer}>
           <div className={styles.icons}>
-            <button className={styles.button}>кнопка</button>
+            <button className={styles.button}>show</button>
+            <button className={styles.button}>Edit</button>
+            <button className={styles.button}>Delete</button>
+            <button className={styles.button}>Like</button>
           </div>
           <CheckBox />
         </footer>

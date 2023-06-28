@@ -1,17 +1,27 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/user.module.scss";
+import Card from "../components/Card";
 
 import MainContainer from "../components/MainContainer";
 
-const Photos = ({ albums }) => {
-  console.log(albums);
+const Photos = ({ albums, users }) => {
+  const [perPage, setPerPage] = useState(10)
+  console.log(albums)
+
+    const handlePerPageChange = event => {
+		setPerPage(parseInt(event.target.value))
+	}
+
+    const selectedCountAlbums = albums.slice(0, perPage)
+
+
   return (
     <MainContainer keywords="Фото">
       <div className={styles.userd}>
         <h1 className={styles.userdf}>Фото</h1>
-        <ul>
-          {albums.map((user) => (
-            <li key={user.id}>{user.title}</li>
+        <ul  className={styles.container}>
+          {selectedCountAlbums.map((album) => (
+            <Card key={album.id} user={users[0].username} title={album.title} />
           ))}
         </ul>
       </div>
@@ -23,9 +33,11 @@ export default Photos;
 
 export async function getStaticProps(context) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/albums`);
+  const response2 = await fetch(`https://jsonplaceholder.typicode.com/users`);
+  const users = await response2.json();
   const albums = await response.json();
 
   return {
-    props: { albums }, // will be passed to the page component as props
+    props: { albums, users }, // will be passed to the page component as props
   };
 }
